@@ -4,12 +4,16 @@
         <div class="navbar-brand align-item-center d-flex">
             <i style="font-size: 40px;" class="fas fa-shipping-fast logo">&nbsp;
             </i>
-            <strong style="font-size: 30px;">Flipkart</strong>
-            <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+            <strong style="font-size: 30px;cursor: pointer;" [routerLink]="['/']">Flipkart</strong>
+            <p style="font-size: 25px;"></p>
+            <!-- <p style="font-size: 20px;cursor: pointer;;" class="mx-3 navbar-text" [routerLink]="['/']">Home</p> -->
+            
+            <div class="form-group ">
+                <input type="text" class="form-control " [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
             </div>
             <span class="fas fa-search search-icon"></span>
         </div>
+            <button class="navbar-text btn btn-primary" [routerLink]="['/auth']">Login </button>
               <button routerLink="cart" class="btn btn-primary">
                   <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
                   <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>

@@ -1,0 +1,22 @@
+<!-- remaining confirm password -->
+<!-- loading,error,tempory conformation all remaining -->
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="container">
+    <div>
+      <h2>{{loginMode?"Sign In":"Sign Up"}} Page</h2>
+    </div>
+    <div class="col-xl-5 my-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name = "email" ngModel required email>
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="col-xl-5">
+      <label for="exampleInputPassword1" class="form-label" >Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name = "password" ngModel required>
+    </div>
+    <button [disabled]="!f.valid" type="submit" class="btn btn-primary my-3">Submit</button>
+    |
+    <p style="display: inline;cursor: pointer;" (click)="loginMode=!loginMode" >Switch to <span style="color:rgb(11, 40, 121)"><strong>{{loginMode?"Sign Up":"Sign In"}}</strong> </span></p>
+    <p *ngIf="!f.valid && f.touched">Please enter valid name and email</p>
+  </div>
+  </form>
