@@ -6,6 +6,7 @@
       <h2>{{loginMode?"Sign In":"Sign Up"}} Page</h2>
     </div>
     <div class="col-xl-5 my-3">
+      <div class="alert alert-danger" *ngIf="errMessege">{{errMessege}}</div>
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" name = "email" ngModel required email>
       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
